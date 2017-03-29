@@ -1,6 +1,6 @@
 export default class BootstrapComponent {
   constructor() {
-    this.template = '<div>{{vm.name}}</div>';
+    this.template = require('./bootstrap.component.html');
     this.restrict = 'E';
     this.controller = BoostrapComponentController;
     this.controllerAs = 'vm';
