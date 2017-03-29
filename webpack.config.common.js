@@ -6,7 +6,10 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, 'src'),
 
-  entry: './index.js',
+  entry: {
+    index: './index.js',
+    vendor: './vendor.js'
+  },
 
   module: {
     rules: [{
@@ -19,6 +22,11 @@ module.exports = {
             ['es2015', { modules: false }]
           ]
         }
+      }]
+    }, {
+      test:  /\.html$/,
+      use: [{
+        loader: 'html-loader'
       }]
     }]
   },

@@ -1,5 +1,6 @@
-import Bootstrap from './components/bootstrap/bootstrap';
+import BootstrapModule from './components/bootstrap/bootstrap.module';
 
-let speaker = new Bootstrap('Owen');
-
-speaker.sayHello();
+angular
+  .module('tgh', [
+    'tgh.component.bootstrap'
+  ]);
