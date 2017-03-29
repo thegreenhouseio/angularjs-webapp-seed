@@ -14,7 +14,7 @@ The following tools are used in the application
 
 [Node]: https://nodejs.org/
 [Yarn]: https://yarnpkg.com/en/
-[Angular]: https://angularjs.io/
+[AngularJS]: https://angularjs.io/
 [Webpack]: https://webpack.github.io/
 
 ## Links
