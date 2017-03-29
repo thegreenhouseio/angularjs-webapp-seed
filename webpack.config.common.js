@@ -1,7 +1,9 @@
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -28,6 +30,9 @@ module.exports = {
       use: [{
         loader: 'html-loader'
       }]
+    }, {
+      test: /\.scss$/,
+      loader: ['style-loader', 'css-loader', 'sass-loader']
     }]
   },
 

@@ -1,1 +1,2 @@
-import angular from 'angular';
+import 'angular';
+import 'angular-material';
