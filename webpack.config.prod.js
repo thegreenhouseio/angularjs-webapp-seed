@@ -1,7 +1,8 @@
-const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
+const webpackMerge = require('webpack-merge');
 
 module.exports = webpackMerge(commonConfig, {
 
@@ -11,7 +12,7 @@ module.exports = webpackMerge(commonConfig, {
     path: __dirname + '/build',
     filename: '[name].[chunkhash].bundle.js',
     sourceMapFilename: '[name].[chunkhash].bundle.map',
-    chunkFilename: '[id].[chunkhash].chunk.js'
+    chunkFilename: '[id].[chunkhash].chunk.js',
   },
 
   plugins: [
@@ -23,7 +24,8 @@ module.exports = webpackMerge(commonConfig, {
       compress: { screw_ie8: true },
       comments: false,
       sourceMap: true
-    })
+    }),
+    new ExtractTextPlugin('[name].[chunkhash].style.css')
   ]
 
 });

@@ -1,9 +1,10 @@
 import BootstrapComponent from './bootstrap.component';
-import FooterComponent from '../footer/footer.module';
-import HeaderComponent from '../header/header.module';
+import '../footer/footer.module';
+import '../header/header.module';
 
 export default angular
   .module('tgh.component.bootstrap', [
+    'ngMaterial',
     'tgh.component.footer',
     'tgh.component.header'
   ])
