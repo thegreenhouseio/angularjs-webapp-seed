@@ -9,7 +9,6 @@ export default class BootstrapComponent {
   }
 }
 
-
 class BoostrapComponentController {
   constructor () {
     this.name = 'Owen';

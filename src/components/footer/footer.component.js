@@ -4,8 +4,8 @@ export default class FooterComponent {
     this.restrict = 'E';
     this.controller = FooterComponentController;
     this.controllerAs = 'vm';
-    this.scope = {};
     this.bindToController = true;
+    this.scope = {};
   }
 }
 
