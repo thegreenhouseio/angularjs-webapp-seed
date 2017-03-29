@@ -5,6 +5,7 @@ export default class BootstrapComponent {
     this.controller = BoostrapComponentController;
     this.controllerAs = 'vm';
     this.bindToController = true;
+    this.scope = {};
   }
 }
 
