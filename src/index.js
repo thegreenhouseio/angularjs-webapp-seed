@@ -1,4 +1,4 @@
-import BootstrapModule from './components/bootstrap/bootstrap.module';
+import './components/bootstrap/bootstrap.module';
 
 angular
   .module('tgh', [

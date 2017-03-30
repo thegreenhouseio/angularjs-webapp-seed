@@ -8,4 +8,4 @@ export default angular
     'tgh.component.footer',
     'tgh.component.header'
   ])
-  .directive('tghBootstrap', () => new BootstrapComponent);
+  .directive('tghBootstrap', () => new BootstrapComponent);  // eslint-disable-line new-parens
