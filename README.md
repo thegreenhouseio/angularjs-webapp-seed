@@ -34,7 +34,6 @@ Recommended plugins to have are:
 - EditorConfig
 - gitignore
 - Sass
-- TypeScript
 - NodeJS
 
 [Webstorm]: https://www.jetbrains.com/webstorm/
