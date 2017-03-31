@@ -10,7 +10,7 @@ The following tools are used in the application
 - [AngularJS][] - as the Front-End framework
 - [Webpack][] 2 - Module loader / bundler, primary build tool
 - [Node][] 6  - local development and build time JavaScript runtime
-- [Yarn][] 3 - package manager for build and application dependencies
+- [Yarn][] - package manager for build and application dependencies
 
 [Node]: https://nodejs.org/
 [Yarn]: https://yarnpkg.com/en/
