@@ -56,11 +56,11 @@ An overview of important files and configurations for the applications
 Also know as "dot" files, these are the build and build configuration files for the application
 
 * _bin/_ - shell scripts for continuous and build environments
-* _.babelrc_ - [Babel][] configuration file for supporting ES6 features _gulpfile.js_
 * _.editorconfig_ - configuration file for EditorConfig IDE plugin
-* _package.json_ - NPM dependency configuration file, for build related dependencies and defines all runnable scripts and commands
+* _.eslintrc_ - configuratin file for [ESLint](http://eslint.org/)
+* _package.json_ - dependency configuration file, for project related dependencies and defines all runnable scripts and commands
 * _webpack.config.common.js_ - webpack config for managing shared webpack configurations
-* _webpack.config.dev.js_ - webpack config for local development
+* _webpack.config.develop.js_ - webpack config for local development
 * _webpack.config.prod.js_ - webpack config for production builds
 
 ### Application Files
@@ -68,16 +68,12 @@ Application code, including unit tests.  Directories are intended to be kept as 
 a feather) organization.
 * _src_ - application code
 * _src/components/_ - resusable UI features
-* _src/services/_ -  APIs for handling  backend REST APIs or browser APIs, non UI related "helpers"
+* _src/services/_ -  APIs for handling backend REST APIs or browser APIs, non UI related "helpers"
 * _src/views/_ -  routable states ("pages")
 * _src/index.html_ - main layout of the application
-* _src/main.ts_ - main entry way into the application and Angular "bootstrapper" (`@NgModule`)
-* _src/polyfills.ts_ - collection of polyfills needed by the application
-* _src/routes.ts_ - routes for the application, maps to different views
-* _src/vendor.ts_ - vendor files from _node_modules_
-
-[Babel]: https://babeljs.io/
-[TS Lint]: http://palantir.github.io/tslint/
+* _src/index.js_ - main entry way into the application and Angular "bootstrapper" (`@NgModule`)
+* _src/routes.js_ - routes for the application, maps to different views
+* _src/vendor.js_ - vendor files from _node_modules_
 
 ## Tasks
 This project uses Webpack as the build tool, exectuted via NPM scripts.  All available tasks are in the `scripts`
