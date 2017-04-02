@@ -2,7 +2,7 @@ export default class UsersComponent {
   constructor() {
     this.template = require('./users.component.html');
     this.restrict = 'E';
-    this.controller = UsersComponentController;
+    this.controller = ['UsersService', UsersComponentController];
     this.controllerAs = 'vm';
     this.bindToController = true;
     this.scope = {};
@@ -10,7 +10,9 @@ export default class UsersComponent {
 }
 
 class UsersComponentController {
-  constructor () {
-    // console.log('users view');
+  constructor (UsersService) {
+    'ngInject';
+
+    this.users = UsersService.getUsers();
   }
 }

@@ -1,3 +1,9 @@
 <div>
+
   <h1>Users View!</h1>
+
+  <ul>
+    <li ng-repeat="user in vm.users">{{::user.firstName}} {{::user.lastName}}</li>
+  </ul>
+
 </div>
