@@ -4,8 +4,9 @@
   "description": "A starter kit for using AngularJS with Webpack and ES6",
   "main": "src/index.js",
   "scripts": {
-    "build": "export NODE_ENV=production && rimraf ./build && webpack --config ./webpack.config.prod.js",
-    "develop": "export NODE_ENV=development && webpack-dev-server --config ./webpack.config.develop.js",
+    "build": "rimraf ./build && webpack --config ./webpack.config.prod.js",
+    "ci": "export NODE_ENV=production && npm run test:unit && npm run test build",
+    "develop": "webpack-dev-server --config ./webpack.config.develop.js",
     "test:unit": "rimraf ./reports && karma start"
   },
   "repository": {
