@@ -104,7 +104,7 @@ $ yarn run build
 
 **Note: This task exports** `NODE_ENV=production`
 
-###  Testing (not support yet)
+###  Testing
 Testing is an important part of software development.  There are three types of automated testing supported:
 
 1. Unit - Used for testing discrete pieces of code in an isolated environemnt (i.e. mocked dependencies).  Ideal for testing services and componengs.
@@ -116,14 +116,6 @@ To run unit and integration tests, run
 ```
 $ yarn run test:unit
 ```
-
-
-To run E2E tests, run:
-```
-$ yarn run test:e2e
-```
-
-**Note: E2E testing is not supported yet**
 
 ### Continuous Integration
 This is a task for the CI server to run, generally called as part of a build script, in this case _bin/build.sh_.  Run it using

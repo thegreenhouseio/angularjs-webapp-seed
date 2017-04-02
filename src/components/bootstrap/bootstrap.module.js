@@ -2,7 +2,7 @@ import BootstrapComponent from './bootstrap.component';
 import '../footer/footer.module';
 import '../header/header.module';
 import '../navigation/navigation.module';
-import '../../services/users.module';
+import '../../services/users/users.module';
 import '../../views/home/home.module';
 import '../../views/users/users.module';
 
