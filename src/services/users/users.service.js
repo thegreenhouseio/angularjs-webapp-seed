@@ -8,7 +8,8 @@ export default class UsersService {
     }, {
       id: 2,
       firstName: 'The',
-      lastName: 'Greenhouse'
+      lastName: 'Greenhouse',
+      isPrimary: false
     }];
   }
 
@@ -26,7 +27,8 @@ export default class UsersService {
     this.users.push({
       id: new Date().getTime(),
       firstName,
-      lastName
+      lastName,
+      isPrimary: false
     });
   }
 
