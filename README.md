@@ -95,14 +95,12 @@ http://localhost:6789/
 **Note: This task exports** `NODE_ENV=development`
 
 ### Production
-This is the production build task for the project.  It is used prior to deploying to an environment and build a
+This is the production build task for the project.  It is used prior to deploying to an environment and builds a
 production version of the application.
 
 ```
 $ yarn run build
 ```
-
-**Note: This task exports** `NODE_ENV=production`
 
 ###  Testing
 Testing is an important part of software development.  There are three types of automated testing supported:
@@ -117,22 +115,21 @@ To run unit and integration tests, run
 $ yarn run test:unit
 ```
 
-### Continuous Integration
-This is a task for the CI server to run, generally called as part of a build script, in this case _bin/build.sh_.  Run it using
+### Continuous Integration / Delivery
+For CI / CD, the production task is combined with the testing task with whatever other relevant post task is need for 
+that specific job's responsibility
 
+```bash
+$ export NODE_ENV=production
+$ yarn run test:unit
+$ yarn run build
 ```
-$ yarn run ci
-```
 
-This will run (in sequence) the `build` and `test:unit` tasks.
-
-**Note: This task exports** `NODE_ENV=production`
-
-### Demo (TODO)
+### Serve / Run
 To serve a production build locally , like for a demo run:
 
 ```
-$ yarn run demo
+$ yarn run serve
 ```
 
 **Note: it is recommended you run this command from the master branch or a tag.  By Default this proxies with the
