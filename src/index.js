@@ -5,10 +5,9 @@ angular
   .module('tgh', [
     uirouter,
     'tgh.component.bootstrap'
-  ]).config(routing);
+  ]).config(($urlRouterProvider, $locationProvider) => {
+    'ngInject';
 
-function routing ($urlRouterProvider, $locationProvider) {
-  'ngInject';
-  $locationProvider.html5Mode(false);
-  $urlRouterProvider.otherwise('/home');
-}
+    $locationProvider.html5Mode(false);
+    $urlRouterProvider.otherwise('/home');
+  });
