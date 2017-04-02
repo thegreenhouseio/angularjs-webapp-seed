@@ -9,7 +9,7 @@ export default angular
     $stateProvider.state({
       name: 'home',
       url: '/home',
-      template: '<tgh-home></tgh-home>'
+      template: '<tgh-home-view></tgh-home-view>'
     });
   })
-  .directive('tghHome', () => new HomeComponent());
+  .directive('tghHomeView', () => new HomeComponent());

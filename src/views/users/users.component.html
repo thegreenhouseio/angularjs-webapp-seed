@@ -1,0 +1,21 @@
+<div>
+
+  <h1>Users View!</h1>
+
+  <ul>
+    <li ng-repeat="user in vm.users">{{::user.firstName}} {{::user.lastName}}
+      <span ng-if="user.isPrimary">(Primary)</span>
+      <span ng-if="!user.isPrimary"><button ng-click="vm.deleteUser(user.id)">Delete</button></span>
+    </li>
+  </ul>
+
+  <h3>Add User</h3>
+  <form novalidate class="simple-form">
+    <label>First Name: <input type="text" ng-model="vm.user.firstName" /></label><br />
+    <label>Last Name: <input type="text" ng-model="vm.user.lastName" /></label><br />
+
+    <input type="button" ng-click="vm.reset()" value="Reset" />
+    <input type="submit" ng-click="vm.createUser(vm.user)" value="Create" />
+  </form>
+
+</div>
