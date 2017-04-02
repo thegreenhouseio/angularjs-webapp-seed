@@ -11,7 +11,7 @@ export default angular
     'tgh.component.footer',
     'tgh.component.header',
     'tgh.component.navigation',
-    'tgh.services.users',
+    'tgh.service.users',
     'tgh.view.home',
     'tgh.view.users'
   ])
