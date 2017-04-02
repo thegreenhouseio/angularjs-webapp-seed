@@ -3,6 +3,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const webpackMerge = require('webpack-merge');
+const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = webpackMerge(commonConfig, {
 
@@ -16,7 +17,9 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   plugins: [
-
+    new NgAnnotatePlugin({
+      add: true
+    }),
     new WebpackMd5Hash(),
     new UglifyJsPlugin({
       beautify: false,
