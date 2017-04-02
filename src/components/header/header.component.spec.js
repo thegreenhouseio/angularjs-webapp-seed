@@ -21,7 +21,7 @@ describe('tgh.component.header', () => {
     element = null;
   });
 
-  it('should test the component exists', () => {
+  it('should test the header component exists', () => {
     expect(scope).toBeDefined();
     expect(element).toBeDefined();
     expect(element.find('header').length).toBe(1);
