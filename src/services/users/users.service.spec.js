@@ -1,20 +1,27 @@
 import UsersService from './users.service';
 
 describe('tgh.services.users', () => {
+  let usersService;
+
+  beforeEach(inject(function() {
+    usersService = new UsersService();
+  }));
+
+  afterEach(function() {
+    usersService = null;
+  });
 
   it('should test the service exists', () => {
-    let service = new UsersService();
-
     expect(UsersService).toBeDefined();
-    expect(service).toBeDefined();
-    expect(service.getUsers).toBeDefined();
-    expect(service.getPrimaryUser).toBeDefined();
-    expect(service.addUser).toBeDefined();
-    expect(service.deleteUser).toBeDefined();
+    expect(usersService).toBeDefined();
+    expect(usersService.getUsers).toBeDefined();
+    expect(usersService.getPrimaryUser).toBeDefined();
+    expect(usersService.addUser).toBeDefined();
+    expect(usersService.deleteUser).toBeDefined();
   });
 
   it('should test that first call to getUsers returns expected default users', () => {
-    let users = new UsersService().getUsers();
+    let users = usersService.getUsers();
 
     expect(users.length).toBe(2);
 
@@ -39,7 +46,6 @@ describe('tgh.services.users', () => {
   });
 
   it('should test that addUsers call works as expected', () => {
-    let service = new UsersService();
     let users = [];
     let found = false;
     let newUser = {
@@ -48,10 +54,10 @@ describe('tgh.services.users', () => {
     };
 
     // add a user
-    service.addUser(newUser.firstName, newUser.lastName);
+    usersService.addUser(newUser.firstName, newUser.lastName);
 
     // get users
-    users = service.getUsers();
+    users = usersService.getUsers();
 
     // test new user was added
     users.filter((user) => {
@@ -64,7 +70,7 @@ describe('tgh.services.users', () => {
   });
 
   it('should test that getPrimaryUser call works as expected', () => {
-    let primaryUser = new UsersService().getPrimaryUser();
+    let primaryUser = usersService.getPrimaryUser();
 
     expect(primaryUser.id).toBe(1);
     expect(primaryUser.firstName).toBe('Owen');
@@ -73,7 +79,6 @@ describe('tgh.services.users', () => {
   });
 
   it('should test that deleteUsers call works as expected when starting with default users', () => {
-    let service = new UsersService();
     let users = [];
     let user = {};
     let newUser = {
@@ -82,10 +87,10 @@ describe('tgh.services.users', () => {
     };
 
     // add a user
-    service.addUser(newUser.firstName, newUser.lastName);
+    usersService.addUser(newUser.firstName, newUser.lastName);
 
     // get users
-    users = service.getUsers();
+    users = usersService.getUsers();
 
     // get our user
     user = users.filter((user) => {
@@ -95,10 +100,10 @@ describe('tgh.services.users', () => {
     })[0];
 
     // add a user
-    service.deleteUser(user.id);
+    usersService.deleteUser(user.id);
 
     // get users
-    users = service.getUsers();
+    users = usersService.getUsers();
 
     expect(users.length).toBe(2);
 
@@ -114,3 +119,17 @@ describe('tgh.services.users', () => {
   });
 
 });
+
+// beforeEach(angular.mock.module('app'));
+//
+// beforeEach(inject(function(_$rootScope_,_$compile_) {
+//   let $rootScope = _$rootScope_,
+//     $compile = _$compile_;
+//
+//   scope = $rootScope.$new();
+//
+//   element = angular.element('<hello-world data-name=""></hello-world>');
+//
+//   $compile(element)(scope);
+//
+// }));
