@@ -1,5 +1,3 @@
-// import './header.component.scss';
-
 export default class HomeComponent {
   constructor() {
     this.template = require('./home.component.html');
