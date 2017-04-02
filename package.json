@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "rimraf ./build && webpack --config ./webpack.config.prod.js",
-    "ci": "export NODE_ENV=production && npm run test:unit && npm run test build",
+    "ci": "export NODE_ENV=production && npm run test:unit && npm run build",
     "develop": "webpack-dev-server --config ./webpack.config.develop.js",
     "test:unit": "rimraf ./reports && karma start"
   },
