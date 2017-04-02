@@ -12,4 +12,6 @@ rm -rf node_modules/ > /dev/null 2>&1
 yarn install
 
 # build
+export NODE_ENV=production
+yarn run test:unit
 yarn run build

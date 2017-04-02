@@ -15,9 +15,11 @@ module.exports = function(config) {
   config.set({
     basePath: './',
     frameworks: ['jasmine'],
-    files: [{
-      pattern: 'src/**/*.spec.js', watched: false
-    }],
+    files: [
+      { pattern: './node_modules/angular/angular.js', watched: false },
+      { pattern: './node_modules/angular-mocks/angular-mocks.js', watched: false },
+      { pattern: 'src/**/*.spec.js', watched: false }
+    ],
 
     preprocessors: {
       '**/*.spec.js': ['webpack', 'coverage']

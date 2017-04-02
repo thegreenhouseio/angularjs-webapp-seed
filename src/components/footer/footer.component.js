@@ -11,6 +11,6 @@ export default class FooterComponent {
 
 class FooterComponentController {
   constructor () {
-    this.year = '2014 - ' + new Date().getFullYear();
+    this.year = new Date().getFullYear();
   }
 }

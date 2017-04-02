@@ -1,5 +1,5 @@
-import './components/bootstrap/bootstrap.module';
 import uirouter from 'angular-ui-router';
+import './components/bootstrap/bootstrap.module';
 
 angular
   .module('tgh', [
