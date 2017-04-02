@@ -119,17 +119,3 @@ describe('tgh.services.users', () => {
   });
 
 });
-
-// beforeEach(angular.mock.module('app'));
-//
-// beforeEach(inject(function(_$rootScope_,_$compile_) {
-//   let $rootScope = _$rootScope_,
-//     $compile = _$compile_;
-//
-//   scope = $rootScope.$new();
-//
-//   element = angular.element('<hello-world data-name=""></hello-world>');
-//
-//   $compile(element)(scope);
-//
-// }));
