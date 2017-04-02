@@ -13,7 +13,12 @@ class HomeComponentController {
   constructor (UsersService) {
     'ngInject';
 
-    let primaryUser = UsersService.getPrimaryUser();
+    this.UsersService = UsersService;
+    this.getPrimaryUser();
+  }
+
+  getPrimaryUser() {
+    let primaryUser = this.UsersService.getPrimaryUser();
 
     this.name = `${primaryUser.firstName} ${primaryUser.lastName}`;
   }
