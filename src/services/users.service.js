@@ -5,6 +5,10 @@ export default class UsersService {
       firstName: 'Owen',
       lastName: 'Buckley',
       isPrimary: true
+    }, {
+      id: 2,
+      firstName: 'The',
+      lastName: 'Greenhouse'
     }];
   }
 
@@ -13,7 +17,6 @@ export default class UsersService {
   }
 
   getPrimaryUser() {
-    // console.log('this.users', this.users);  // eslint-disable-line no-console
     let primaryUser = this.users.filter((user) => {
       return user.isPrimary;
     });
@@ -21,9 +24,9 @@ export default class UsersService {
     return primaryUser[0];
   }
 
-  addUser(id, firstName, lastName) {
+  addUser(firstName, lastName) {
     this.users.push({
-      id,
+      id: new Date().getTime(),
       firstName,
       lastName
     });
