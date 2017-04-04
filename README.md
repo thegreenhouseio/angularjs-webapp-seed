@@ -71,8 +71,7 @@ a feather) organization.
 * _src/services/_ -  APIs for handling backend REST APIs or browser APIs, non UI related "helpers"
 * _src/views/_ -  routable states ("pages")
 * _src/index.html_ - main layout of the application
-* _src/index.js_ - main entry way into the application and Angular "bootstrapper" (`@NgModule`)
-* _src/routes.js_ - routes for the application, maps to different views
+* _src/index.js_ - main entry way into the application
 * _src/vendor.js_ - vendor files from _node_modules_
 
 ## Tasks
