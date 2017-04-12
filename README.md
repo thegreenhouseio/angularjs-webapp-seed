@@ -40,8 +40,8 @@ Recommended plugins to have are:
 
 ### Installation
 
-1. If you don't already have it, download and install NodeJS (comes with NPM).
-2. This project favors Yarn, so make sure you have the expected by version by installing it after installing Node
+1. If you don't already have it, download and install NodeJS (which comes with NPM)
+2. This project favors Yarn, so make sure you have the expected version by installing it after installing Node
 
 ```
 $ npm install -g yarn@0.21.3
@@ -75,7 +75,7 @@ a feather) organization.
 * _src/vendor.js_ - vendor files from _node_modules_
 
 ## Tasks
-This project uses Webpack as the build tool, exectuted via NPM scripts.  All available tasks are in the `scripts`
+This project uses Webpack as the build tool, executed via NPM scripts.  All available tasks are in the `scripts`
 section of _package.json_
 
 ### Development
@@ -115,8 +115,7 @@ $ yarn run test:unit
 ```
 
 ### Continuous Integration / Delivery
-For CI / CD, the production task is combined with the testing task with whatever other relevant post task is need for 
-that specific job's responsibility
+For CI / CD, the production task is combined with the testing task with whatever other relevant post task is needed for that specific job's responsibility
 
 ```bash
 $ export NODE_ENV=production
@@ -125,7 +124,7 @@ $ yarn run build
 ```
 
 ### Serve / Run
-To serve a production build locally , like for a demo run:
+To serve a production build locally, like for a demo run:
 
 ```
 $ yarn run serve
