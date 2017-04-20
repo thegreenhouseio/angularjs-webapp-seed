@@ -47,7 +47,13 @@ Recommended plugins to have are:
 $ npm install -g yarn@0.21.3
 ```
 
-3) Now install the build and application dependencies by running `$ yarn install` (Vagrant will do this for you)
+3) Now install the build and application dependencies by running 
+
+```
+$ yarn install
+```
+
+(Vagrant will do this for you)
 
 ## Project Layout
 An overview of important files and configurations for the applications
@@ -89,7 +95,7 @@ $ yarn run develop
 See it in a browser by opening up
 
 ```
-http://localhost:6789/
+http://localhost:9000/
 ```
 
 **Note: This task exports** `NODE_ENV=development`
