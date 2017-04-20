@@ -1,5 +1,5 @@
-import HomeTemplate from './home.template.html';
 import HomeController from './home.controller';
+import HomeTemplate from './home.template.html';
 
 export default function HomeConfig($stateProvider) {
   'ngInject';
