@@ -1,6 +1,8 @@
+import template from './home.component.html';
+
 export default class HomeComponent {
   constructor() {
-    this.template = require('./home.component.html');
+    this.template = template;
     this.restrict = 'E';
     this.controller = ['UsersService', HomeComponentController];
     this.controllerAs = 'vm';

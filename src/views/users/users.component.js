@@ -1,6 +1,8 @@
+import template from './users.component.html';
+
 export default class UsersComponent {
   constructor() {
-    this.template = require('./users.component.html');
+    this.template = template;
     this.restrict = 'E';
     this.controller = ['UsersService', UsersComponentController];
     this.controllerAs = 'vm';
