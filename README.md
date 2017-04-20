@@ -67,9 +67,9 @@ Also know as "dot" files, these are the build and build configuration files for 
 Application code, including unit tests.  Directories are intended to be kept as flat as possible with a B.O.F. (birds of
 a feather) organization.
 * _src_ - application code
-* _src/components/_ - resusable UI features.  A `BootstrapComponent` has been designated to manage starting up the application, from _index.js_
+* _src/components/_ - resusable UI features, typically directives.  A `BootstrapComponent` has been designated to manage starting up the application, from _index.js_
 * _src/services/_ -  APIs for handling backend REST APIs or browser APIs, non UI related "helpers"
-* _src/views/_ -  routable states ("pages")
+* _src/views/_ -  routable states ("pages"), generally exposed with `class` controllers
 * _src/index.html_ - main layout of the application
 * _src/index.js_ - main entry way into the application and pulls in the application's `BootstrapComponent`
 * _src/routes.js_ - routes for the application, maps to different views

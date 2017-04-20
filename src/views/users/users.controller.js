@@ -1,17 +1,4 @@
-import template from './users.component.html';
-
-export default class UsersComponent {
-  constructor() {
-    this.template = template;
-    this.restrict = 'E';
-    this.controller = ['UsersService', UsersComponentController];
-    this.controllerAs = 'vm';
-    this.bindToController = true;
-    this.scope = {};
-  }
-}
-
-class UsersComponentController {
+export default class UsersController {
   constructor (UsersService) {
     'ngInject';
 
