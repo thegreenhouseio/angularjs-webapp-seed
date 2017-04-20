@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "rimraf ./build && webpack --config ./webpack.config.prod.js",
-    "develop": "webpack-dev-server --config ./webpack.config.develop.js",
+    "develop": "webpack-dev-server --config ./webpack.config.develop.js --open",
     "serve": "webpack --config ./webpack.config.prod.js -p --progress --profile --bail && http-server ./build -o",
     "test:unit": "rimraf ./reports && karma start"
   },
