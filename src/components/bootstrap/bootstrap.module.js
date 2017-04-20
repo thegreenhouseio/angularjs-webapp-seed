@@ -1,4 +1,6 @@
 import BootstrapComponent from './bootstrap.component';
+import BootstrapConfig from './bootstrap.config';
+import BootstrapRun from './bootstrap.run';
 import '../footer/footer.module';
 import '../header/header.module';
 import '../navigation/navigation.module';
@@ -15,4 +17,6 @@ export default angular
     'tgh.view.home',
     'tgh.view.users'
   ])
+  .config(BootstrapConfig)
+  .run(BootstrapRun)
   .directive('tghBootstrap', () => new BootstrapComponent());
