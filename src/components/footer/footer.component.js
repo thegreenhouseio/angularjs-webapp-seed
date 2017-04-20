@@ -1,6 +1,8 @@
+import template from './footer.component.html';
+
 export default class FooterComponent {
   constructor() {
-    this.template = require('./footer.component.html');
+    this.template = template;
     this.restrict = 'E';
     this.controller = FooterComponentController;
     this.controllerAs = 'vm';

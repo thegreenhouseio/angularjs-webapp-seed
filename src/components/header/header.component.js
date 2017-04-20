@@ -1,8 +1,9 @@
 import './header.component.scss';
+import template from './header.component.html';
 
 export default class HeaderComponent {
   constructor() {
-    this.template = require('./header.component.html');
+    this.template = template;
     this.restrict = 'E';
   }
 }
