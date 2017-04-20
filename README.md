@@ -67,11 +67,12 @@ Also know as "dot" files, these are the build and build configuration files for 
 Application code, including unit tests.  Directories are intended to be kept as flat as possible with a B.O.F. (birds of
 a feather) organization.
 * _src_ - application code
-* _src/components/_ - resusable UI features
+* _src/components/_ - resusable UI features.  A `BootstrapComponent` has been designated to manage starting up the application, from _index.js_
 * _src/services/_ -  APIs for handling backend REST APIs or browser APIs, non UI related "helpers"
 * _src/views/_ -  routable states ("pages")
 * _src/index.html_ - main layout of the application
-* _src/index.js_ - main entry way into the application
+* _src/index.js_ - main entry way into the application and pulls in the application's `BootstrapComponent`
+* _src/routes.js_ - routes for the application, maps to different views
 * _src/vendor.js_ - vendor files from _node_modules_
 
 ## Tasks
@@ -81,7 +82,7 @@ section of _package.json_
 ### Development
 This will start up a Node (Express) server which watches for changes and "redeploys" as needed.
 
-```
+```bash
 $ yarn run develop
 ```
 
@@ -97,7 +98,7 @@ http://localhost:6789/
 This is the production build task for the project.  It is used prior to deploying to an environment and builds a
 production version of the application.
 
-```
+```bash
 $ yarn run build
 ```
 
@@ -110,7 +111,7 @@ Testing is an important part of software development.  There are three types of 
 
 To run unit and integration tests, run
 
-```
+```bash
 $ yarn run test:unit
 ```
 
@@ -126,7 +127,7 @@ $ yarn run build
 ### Serve / Run
 To serve a production build locally, like for a demo run:
 
-```
+```bash
 $ yarn run serve
 ```
 
@@ -137,13 +138,13 @@ $ yarn run serve
 ## Dependency Management
 Build packages (like Webpack) are installed through Yarn into _package.json_, using
 
-```
+```bash
 $ yarn add <package-name>  --dev
 ```
 
 Dependencies for the application (like Angular) are installed by running
 
-```
+```bash
 $ yarn add <package-name>
 ```
 
