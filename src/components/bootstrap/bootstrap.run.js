@@ -1,4 +1,5 @@
 export default function BootstrapRun($location, $log, $rootScope) {
+  'ngInject';
 
   $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
     const page = $location.url();
