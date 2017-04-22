@@ -1,6 +1,6 @@
 {
   "name": "angularjs-webpack-seed",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A starter kit for using AngularJS with Webpack and ES6",
   "main": "src/index.js",
   "scripts": {
