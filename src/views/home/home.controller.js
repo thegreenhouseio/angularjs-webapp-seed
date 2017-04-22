@@ -1,8 +1,7 @@
 export default class HomeController {
-  constructor (UsersService) {
+  constructor (primaryUser) {
     'ngInject';
 
-    this.primaryUser = UsersService.getPrimaryUser();
-    this.name = `${this.primaryUser.firstName} ${this.primaryUser.lastName}`;
+    this.name = `${primaryUser.firstName} ${primaryUser.lastName}`;
   }
 }
