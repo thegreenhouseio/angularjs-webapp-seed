@@ -53,8 +53,6 @@ $ npm install -g yarn@0.21.3
 $ yarn install
 ```
 
-(Vagrant will do this for you)
-
 ## Project Layout
 An overview of important files and configurations for the applications
 
@@ -90,12 +88,6 @@ This will start up a Node (Express) server which watches for changes and "redepl
 
 ```bash
 $ yarn run develop
-```
-
-See it in a browser by opening up
-
-```
-http://localhost:9000/
 ```
 
 **Note: This task exports** `NODE_ENV=development`
