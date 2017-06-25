@@ -1,4 +1,4 @@
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -11,17 +11,19 @@ module.exports = {
     vendor: './vendor.js'
   },
 
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].[chunkhash].bundle.js',
+    sourceMapFilename: '[name].[chunkhash].bundle.map',
+    chunkFilename: '[id].[chunkhash].chunk.js'
+  },
+
   module: {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
       use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            ['es2015', { modules: false }]
-          ]
-        },
+        loader: 'babel-loader' // see .babelrc for all "options"
       }, {
         loader: 'eslint-loader',
         options: {
@@ -30,7 +32,7 @@ module.exports = {
         }
       }]
     }, {
-      test:  /\.html$/,
+      test: /\.html$/,
       use: [{
         loader: 'html-loader'
       }]
@@ -41,35 +43,13 @@ module.exports = {
   },
 
   plugins: [
-    new FaviconsWebpackPlugin({
-      logo: './components/bootstrap/images/favicon.png',
-      emitStats: true,
-      prefix: 'icons/',
-      statsFilename: 'icons/stats.json',
-      inject: true,
-      title: 'The Greenhouse',
-      background: '#efefef',
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: true,
-        opengraph: true,
-        twitter: true,
-        yandex: true,
-        windows: true
-      }
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor']
     }),
 
     new HtmlWebpackPlugin({
       template: './index.html',
       chunksSortMode: 'dependency'
-    }),
-
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor'].reverse()
     })
   ]
 

@@ -2,14 +2,6 @@ const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.config.common.js');
 
 module.exports = webpackMerge(commonConfig, {
-  output: {
-    path: __dirname + './build',
-    filename: '[name].bundle.js',
-    sourceMapFilename: '[name].map',
-    chunkFilename: '[id].chunk.js',
-    library: 'ac_[name]',
-    libraryTarget: 'var',
-  },
 
   devServer: {
     contentBase: './build',
@@ -21,7 +13,7 @@ module.exports = webpackMerge(commonConfig, {
       aggregateTimeout: 300,
       poll: 1000
     },
-    proxy:{
+    proxy: {
       '/api/*': {
         target: 'http://<your-domain>',
         secure: false,
