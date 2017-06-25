@@ -4,10 +4,10 @@
   "description": "A starter kit for using AngularJS with Webpack and ES6",
   "main": "src/index.js",
   "scripts": {
-    "build": "rimraf ./build && webpack --config ./webpack.config.prod.js",
+    "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js",
     "develop": "webpack-dev-server --config ./webpack.config.develop.js --open",
     "serve": "webpack --config ./webpack.config.prod.js -p --progress --profile --bail && http-server ./build -o",
-    "test:unit": "rimraf ./reports && karma start"
+    "test": "rimraf ./reports && karma start"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "angular-mocks": "^1.6.4",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-plugin-istanbul": "^4.1.4",
     "babel-preset-es2015": "^6.24.0",
     "css-loader": "^0.27.3",
     "css-to-string-loader": "^0.1.2",

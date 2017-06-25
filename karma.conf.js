@@ -1,13 +1,17 @@
 const isProductionBuild = process.env.NODE_ENV === 'production';
+const browser = isProductionBuild ? 'PhantomJS' : 'Chrome';
 const shouldWatch = !isProductionBuild;
 const shouldSingleRun = isProductionBuild;
-const browser = isProductionBuild ? 'PhantomJS' : 'Chrome';
+const srcGlob = './src/**/**/*.js';
+const vendorGlob = './src/vendor.js';
 const webpackConfig = require('./webpack.config.common');
 
-// TODO issues with karma and CommonChunksPlugin
+// known issues with karma and CommonChunksPlugin
 // https://github.com/webpack/karma-webpack/issues/24
-webpackConfig.plugins[2] = function() {};
+webpackConfig.plugins[0] = function() {};
 
+// don't fail on eslint errors while developing
+webpackConfig.module.rules[0].use[1].options.failOnError = isProductionBuild;
 
 module.exports = function(config) {
   const logLevel = isProductionBuild ? config.LOG_DEBUG : config.LOG_INFO;
@@ -16,13 +20,14 @@ module.exports = function(config) {
     basePath: './',
     frameworks: ['jasmine'],
     files: [
-      { pattern: './node_modules/angular/angular.js', watched: false },
+      { pattern: vendorGlob, watched: false },
       { pattern: './node_modules/angular-mocks/angular-mocks.js', watched: false },
-      { pattern: 'src/**/*.spec.js', watched: false }
+      { pattern: srcGlob, watched: false }
     ],
 
     preprocessors: {
-      '**/*.spec.js': ['webpack', 'coverage']
+      [srcGlob]: ['webpack'],
+      [vendorGlob]: ['webpack']
     },
 
     webpack: webpackConfig,
@@ -35,15 +40,25 @@ module.exports = function(config) {
     singleRun: shouldSingleRun,
     concurrency: Infinity,
     junitReporter: {
-      outputDir: './reports/',
+      outputDir: './reports/test-results',
       outputFile: 'test-results.xml',
       suite: 'seed-webapp',
       useBrowserName: false
     },
     coverageReporter: {
-      type : 'cobertura',
-      dir : './reports',
-      subdir: 'coverage'
+      reporters: [{
+        type: 'cobertura',
+        dir: './reports',
+        subdir: 'test-coverage/',
+        file: 'coverage.xml'
+      }, {
+        type: 'html',
+        dir: './reports',
+        subdir: 'test-coverage/',
+        file: 'coverage.html'
+      }, {
+        type: 'text-summary'
+      }]
     }
   });
 

@@ -110,7 +110,7 @@ Testing is an important part of software development.  There are three types of 
 To run unit and integration tests, run
 
 ```bash
-$ yarn run test:unit
+$ yarn run test
 ```
 
 ### Continuous Integration / Delivery
@@ -118,7 +118,8 @@ For CI / CD, the production task is combined with the testing task with whatever
 
 ```bash
 $ export NODE_ENV=production
-$ yarn run test:unit
+$ export BABEL_ENV=production
+$ yarn run test
 $ yarn run build
 ```
 

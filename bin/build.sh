@@ -13,5 +13,6 @@ yarn install
 
 # build
 export NODE_ENV=production
-yarn run test:unit
+export BABEL_ENV=production
+yarn run test
 yarn run build
