@@ -40,7 +40,7 @@ module.exports = function(config) {
     singleRun: shouldSingleRun,
     concurrency: Infinity,
     junitReporter: {
-      outputDir: './reports/test-results/',
+      outputDir: './reports/test-results',
       outputFile: 'test-results.xml',
       suite: 'seed-webapp',
       useBrowserName: false
