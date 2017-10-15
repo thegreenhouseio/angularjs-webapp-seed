@@ -9,6 +9,8 @@ const webpackConfig = require('./webpack.config.common');
 // https://github.com/webpack/karma-webpack/issues/24
 webpackConfig.plugins[0] = function() {};
 
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
 // don't fail on eslint errors while developing
 webpackConfig.module.rules[0].use[1].options.failOnError = isProductionBuild;
 
