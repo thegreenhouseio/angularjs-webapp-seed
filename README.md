@@ -112,14 +112,7 @@ $ yarn run test
 ```
 
 ### Continuous Integration / Delivery
-For CI / CD, the production task is combined with the testing task with whatever other relevant post task is needed for that specific job's responsibility
-
-```bash
-$ export NODE_ENV=production
-$ export BABEL_ENV=production
-$ yarn run test
-$ yarn run build
-```
+**TODO Document Your Continuous Integration Environment Here**
 
 ### Serve / Run
 To serve a production build locally, like for a demo run:
