@@ -1,5 +1,4 @@
 const isProductionBuild = process.env.NODE_ENV === 'production';
-const browser = isProductionBuild ? 'PhantomJS' : 'Chrome';
 const shouldWatch = !isProductionBuild;
 const shouldSingleRun = isProductionBuild;
 const srcGlob = './src/**/**/*.js';
@@ -36,7 +35,17 @@ module.exports = function(config) {
     port: 9876,
     logLevel: logLevel,
     autoWatch: shouldWatch,
-    browsers: [browser],
+    browsers: ['CustomChromeHeadless'],
+    customLaunchers: {
+      CustomChromeHeadless: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-setuid-sandbox'] // https://github.com/Googlechrome/puppeteer/issues/290#issuecomment-322852784
+      }
+    },
+    captureTimeout: 210000, // https://github.com/jasmine/jasmine/issues/1413#issuecomment-334247097
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout: 210000,
+    browserNoActivityTimeout: 210000,
     singleRun: shouldSingleRun,
     concurrency: Infinity,
     junitReporter: {
