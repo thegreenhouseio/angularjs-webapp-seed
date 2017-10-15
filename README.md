@@ -8,8 +8,8 @@ repo and edit the files as needed to match your project.
 The following tools are used in the application
 
 - [AngularJS][] - as the Front-End framework
-- [Webpack][] 2 - Module loader / bundler, primary build tool
-- [Node][] 6  - local development and build time JavaScript runtime
+- [Webpack][] - Module loader / bundler, primary build tool
+- [Node][] LTS - local development and build time JavaScript runtime
 - [Yarn][] - package manager for build and application dependencies
 
 [Node]: https://nodejs.org/
@@ -44,7 +44,7 @@ Recommended plugins to have are:
 2. This project favors Yarn, so make sure you have the expected version by installing it after installing Node
 
 ```
-$ npm install -g yarn@0.21.3
+$ npm install -g yarn@^1.0.0
 ```
 
 3) Now install the build and application dependencies by running 
@@ -89,8 +89,6 @@ This will start up a Node (Express) server which watches for changes and "redepl
 ```bash
 $ yarn run develop
 ```
-
-**Note: This task exports** `NODE_ENV=development`
 
 ### Production
 This is the production build task for the project.  It is used prior to deploying to an environment and builds a

@@ -1,4 +1,3 @@
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -7,8 +6,8 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
 
   entry: {
-    index: './index.js',
-    vendor: './vendor.js'
+    vendor: './vendor.js',
+    index: './index.js'
   },
 
   output: {
@@ -44,7 +43,7 @@ module.exports = {
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor']
+      name: 'common'
     }),
 
     new HtmlWebpackPlugin({

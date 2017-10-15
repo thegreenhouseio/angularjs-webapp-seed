@@ -1,3 +1,4 @@
+import './vendor';
 import './components/bootstrap/bootstrap.module';
 
 angular
